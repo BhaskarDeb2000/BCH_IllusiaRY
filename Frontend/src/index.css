@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  /* Primary colors */
+  --primary-color: #9537c7; /* Highlight 1 */
+  --primary-light: #b35cde;
+  --primary-dark: #44195b; /* Dark */
+  
+  /* Secondary colors */
+  --secondary-color: #3ec3ba; /* Highlight 2 */
+  --secondary-light: #65d8d1;
+  --secondary-dark: #2d9990;
+  
+  /* Accent colors */
+  --accent-color: #44195b; /* Dark */
+  --accent-light: #5f2a7e;
+  --accent-dark: #321145;
+  
+  /* Text colors */
+  --text-primary: #2a2a2a; /* Font basic */
+  --text-secondary: #4d4d4d;
+  --text-light: #6c6c6c;
+  
+  /* Background colors */
+  --background-light: #ffffff; /* Light neutral */
+  --background-white: #ffffff; /* Light neutral */
+  --background-dark: #f0f0f0;
+  
+  /* Status colors */
+  --success-color: #3ec3ba; /* Using Highlight 2 for success */
+  --warning-color: #ffaa00;
+  --error-color: #e74c3c;
+  
+  /* UI elements */
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 20px;
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --box-shadow-hover: 0 14px 30px rgba(0, 0, 0, 0.16);
+  --box-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  background-color: #2a2a2a; /* Font basic as background */
+  color: #ffffff; /* Light neutral */
+}
+
+.dark-mode {
+  /* Dark mode colors */
+  --primary-color: #b35cde; /* Lighter version of Highlight 1 */
+  --primary-light: #c278e6;
+  --primary-dark: #9537c7; /* Highlight 1 */
+  
+  /* Secondary colors in dark mode */
+  --secondary-color: #4fd9d0; /* Lighter version of Highlight 2 */
+  --secondary-light: #65d8d1;
+  --secondary-dark: #3ec3ba; /* Highlight 2 */
+  
+  /* Accent colors in dark mode */
+  --accent-color: #9537c7; /* Highlight 1 */
+  --accent-light: #b35cde;
+  --accent-dark: #44195b; /* Dark */
+  
+  /* Text colors in dark mode */
+  --text-primary: #ffffff; /* Light neutral */
+  --text-secondary: #e0e0e0;
+  --text-light: #cccccc;
+  
+  /* Background colors in dark mode */
+  --background-light: #2a2a2a; /* Font basic as background */
+  --background-white: #352042; /* Mix of Dark (#44195b) and background */
+  --background-dark: #44195b; /* Dark */
+  
+  /* UI elements in dark mode */
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  --box-shadow-hover: 0 14px 30px rgba(68, 25, 91, 0.30);
+  --box-shadow-sm: 0 2px 8px rgba(68, 25, 91, 0.2);
+}
+
+/* Dark mode inputs and form elements */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: #352042; /* Mix of Dark (#44195b) and background */
+  color: #ffffff; /* Light neutral */
+  border: 1px solid rgba(149, 55, 199, 0.2); /* Highlight 1 with opacity */
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(149, 55, 199, 0.25); /* Highlight 1 with opacity */
+}
+
+/* Dark mode table styling */
+.dark-mode table {
+  border-color: rgba(149, 55, 199, 0.2); /* Highlight 1 with opacity */
+}
+
+.dark-mode th {
+  background-color: #352042; /* Mix of Dark (#44195b) and background */
+}
+
+.dark-mode tr:nth-child(even) {
+  background-color: #3a2548; /* Slightly lighter than background-white */
+}
+
+.dark-mode tr:hover {
+  background-color: #3f2a4e; /* Even slightly lighter */
+}
+
+/* Dark mode scrollbar */
+.dark-mode::-webkit-scrollbar-track {
+  background: #44195b; /* Dark */
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+  background: #9537c7; /* Highlight 1 */
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: #b35cde; /* Lighter version of Highlight 1 */
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, .h1, nav.main-nav {
+  font-family: 'Roboto Slab', serif;
+}
+
+h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, div, a, button, input, textarea, select {
+  font-family: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Add responsive container utilities */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Helper classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Theme transition classes */
+.theme-transition {
+  transition: background-color 0.5s ease,
+              color 0.5s ease,
+              border-color 0.5s ease,
+              box-shadow 0.5s ease;
+}
+
+/* Card and container transitions for dark mode */
+.card,
+.container,
+.paper {
+  transition: background-color 0.5s ease,
+              border-color 0.5s ease,
+              box-shadow 0.5s ease,
+              transform 0.3s ease;
+}
+
+/* Interactive element transitions for both light and dark mode */
+button,
+a,
+input,
+select,
+textarea {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+}

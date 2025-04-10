@@ -1,0 +1,94 @@
+/* LoginPage.css */
+.login-container {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 100%);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-paper {
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .login-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  }
+  
+  .login-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login-subtitle {
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form-field {
+    margin-bottom: 1.25rem;
+  }
+  
+  .login-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 0;
+    border-radius: var(--border-radius);
+    text-transform: none;
+    font-weight: 600;
+    font-size: 1rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .register-link {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .register-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .register-link a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Add animation */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
